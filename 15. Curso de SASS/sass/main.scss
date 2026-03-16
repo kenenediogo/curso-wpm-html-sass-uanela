@@ -1,5 +1,7 @@
 // @import "variables"; -> O import é o método antigo que vai ser descontinuado na versão 3.0.0, nisto se usa o @use
 @import "variables";
+@import "functions";
+
 
 * {
     margin: 0;
@@ -9,14 +11,14 @@
 
 body {
     background-color: $light-color;
-    color: $dark-color;
+    color: set-text-color($light-color);
     font-family: $font-stack;
     line-height: 1.5;
 }
 
 header {
     background-color: $dark-color;
-    color: $light-color;
+    color: set-text-color($dark-color);
     padding: 1rem;
 
     h1 {
@@ -34,18 +36,12 @@ header {
     // o &, vai fazer a contatenação por exemplo, neste caso, vai concatenar o ".section" com o "-1" que vai dar .section-1.
     &-1 {
         background-color: $primary-color;
+        color: set-text-color($primary-color);
     }
 
     &-2 {
         background-color: $secondary-color;
-    }
-}
-
-a {
-    color: $dark-color;
-
-    &:hover {
-        color: $tertiary-color;
+        color: set-text-color($secondary-color);
     }
 }
 
@@ -65,14 +61,26 @@ a {
         // @extend %btn-shared; é a herança para o botão
         @extend %btn-shared;
         background-color: $light-color;
-        color: $dark-color;
+        color: set-text-color($light-color);
         border-radius: 8px;
+
+        // propriedades embutidas do sass, neste caso vamos definir a quantidade de hover que a função vai aplicar
+        &:hover {
+            background-color: darken($light-color, 30%);
+            @include transform(rotate(20deg));
+            @include set-btn(#f00, 100px);
+        }
     }
 
     &-dark {
         @extend %btn-shared;
         background-color: $dark-color;
-        color: $light-color;
+        color: set-text-color($dark-color);
         border-radius: 8px;
+
+        &:hover {
+            background-color: lighten($dark-color, 30%);
+            @include transform(scale(1.3))
+        }
     }
 }

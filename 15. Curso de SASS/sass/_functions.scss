@@ -1,0 +1,19 @@
+// Definir cor dos textos
+// funções: neste caso vamos identificar a cor do fundo e alterar a cor da letra em função da sua tonalidade.
+@function set-text-color($color) {
+    @if (lightness($color) > 50) {
+        @return $dark-color;
+    } @else {
+        @return $light-color;
+    }
+}
+
+// MIXIN - Transform
+@mixin transform($property) {
+    transform: $property;
+}
+
+@mixin set-btn($bg-color, $width) {
+    background-color: $bg-color;
+    width: $width;
+}
