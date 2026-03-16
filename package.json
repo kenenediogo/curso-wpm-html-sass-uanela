@@ -1,0 +1,15 @@
+{
+  "name": "15.-curso-de-sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass1": "sass --watch sass:public/styles"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.98.0"
+  }
+}

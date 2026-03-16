@@ -1,0 +1,78 @@
+// @import "variables"; -> O import é o método antigo que vai ser descontinuado na versão 3.0.0, nisto se usa o @use
+@import "variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $light-color;
+    color: $dark-color;
+    font-family: $font-stack;
+    line-height: 1.5;
+}
+
+header {
+    background-color: $dark-color;
+    color: $light-color;
+    padding: 1rem;
+
+    h1 {
+        text-align: center;
+    } 
+}
+
+.section {
+    padding: 3rem;
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    // o &, vai fazer a contatenação por exemplo, neste caso, vai concatenar o ".section" com o "-1" que vai dar .section-1.
+    &-1 {
+        background-color: $primary-color;
+    }
+
+    &-2 {
+        background-color: $secondary-color;
+    }
+}
+
+a {
+    color: $dark-color;
+
+    &:hover {
+        color: $tertiary-color;
+    }
+}
+
+// HERANÇA
+
+%btn-shared {
+    display: inline-block;
+    padding: 0.7rem 2rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.btn {
+    &-light {
+        // @extend %btn-shared; é a herança para o botão
+        @extend %btn-shared;
+        background-color: $light-color;
+        color: $dark-color;
+        border-radius: 8px;
+    }
+
+    &-dark {
+        @extend %btn-shared;
+        background-color: $dark-color;
+        color: $light-color;
+        border-radius: 8px;
+    }
+}
