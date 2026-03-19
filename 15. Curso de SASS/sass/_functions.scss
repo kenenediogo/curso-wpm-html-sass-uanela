@@ -13,7 +13,8 @@
     transform: $property;
 }
 
-@mixin set-btn($bg-color, $width) {
+@mixin set-btn($bg-color, $width, $color) {
     background-color: $bg-color;
     width: $width;
+    color: $color;
 }
