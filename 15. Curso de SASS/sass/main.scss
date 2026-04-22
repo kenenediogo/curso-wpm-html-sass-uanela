@@ -47,40 +47,43 @@ header {
 
 // HERANÇA
 
-%btn-shared {
+.btn {
     display: inline-block;
     padding: 0.7rem 2rem;
     border: none;
     cursor: pointer;
     text-decoration: none;
     margin-top: 1rem;
+    background-color: orange
 }
 
 .btn {
     &-light {
         // @extend %btn-shared; é a herança para o botão
-        @extend %btn-shared;
+        @extend .btn;
         background-color: $light-color;
         color: set-text-color($light-color);
         border-radius: 8px;
+        
 
         // propriedades embutidas do sass, neste caso vamos definir a quantidade de hover que a função vai aplicar
         &:hover {
             background-color: darken($light-color, 30%);
             @include transform(rotate(10deg));
-            @include set-btn(#f00, 100px, #fff);
+            @include set-btn(#f00, 100px, #fff, center);
         }
     }
 
     &-dark {
-        @extend %btn-shared;
+        @extend .btn;
         background-color: $dark-color;
         color: set-text-color($dark-color);
         border-radius: 8px;
 
         &:hover {
             background-color: lighten($dark-color, 30%);
-            @include transform(scale(1.2))
+            @include transform(scale(1.2));
+            @include set-btn(#fff, 150px,  #000, center);
         }
     }
 }
