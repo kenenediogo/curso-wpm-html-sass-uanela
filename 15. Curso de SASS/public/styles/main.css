@@ -10,6 +10,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
 }
+body.dark {
+  background-color: #1d1d1d;
+  color: #f4f4f4;
+}
 
 header {
   background-color: #1d1d1d;
@@ -48,15 +52,16 @@ header h1 {
 .btn-light {
   background-color: #f4f4f4;
   color: #1d1d1d;
-  border-radius: 8px;
+  background-color: #f4f4f4;
+  width: 150px;
+  border-radius: 9999px;
 }
 .btn-light:hover {
   background-color: rgb(167.5, 167.5, 167.5);
   transform: rotate(10deg);
   background-color: #f00;
-  width: 100px;
-  color: #fff;
-  text-align: center;
+  width: 100pxpx;
+  border-radius: unset;
 }
 .btn-dark {
   background-color: #1d1d1d;
@@ -67,9 +72,8 @@ header h1 {
   background-color: rgb(105.5, 105.5, 105.5);
   transform: scale(1.2);
   background-color: #fff;
-  width: 150px;
-  color: #000;
-  text-align: center;
+  width: 150pxpx;
+  border-radius: unset;
 }
 
 /*# sourceMappingURL=main.css.map */

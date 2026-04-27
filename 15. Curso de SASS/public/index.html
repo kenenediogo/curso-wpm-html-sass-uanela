@@ -23,7 +23,20 @@
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam cumque corporis impedit ut repellendus ipsa aspernatur, doloremque ab fuga consequuntur exercitationem. Doloress ad quia sint quaerat inventore saepe, labore eveniet.</p>
 
         <a href="" class="btn-dark">Ver Mais</a>
-        <a href="" class="btn">Ver Mais</a>
+        
     </section>
+
+    <button class="theme-btn">Trocar Temas</button>
+    <p>Cor de Tema</p>
+
 </body>
+
+    <script>
+        const btn = document.querySelector(".theme-btn");
+
+        btn.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+        });
+    </script>
+
 </html>

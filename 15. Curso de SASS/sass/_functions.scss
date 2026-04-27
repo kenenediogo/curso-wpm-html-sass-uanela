@@ -13,9 +13,26 @@
     transform: $property;
 }
 
-@mixin set-btn($bg-color, $width, $color, $text-align) {
+@mixin set-btn($bg-color, $width, $rounded: 0) {
     background-color: $bg-color;
-    width: $width;
-    color: $color;
-    text-align: $text-align;
+    width: $width + px;
+
+    @if ($rounded == "full") {
+        border-radius: 9999px;
+    } @else if ($rounded > 0) {
+        border-radius: $rounded + px;
+    } @else {
+        border-radius: unset;
+    }
+    
+}
+
+@mixin dark-theme($light-theme) {
+    @if $light-theme {
+        background-color: $light-color;
+        color: $dark-color;
+    } @else {
+        background-color: $dark-color;
+        color: $light-color;
+    }
 }

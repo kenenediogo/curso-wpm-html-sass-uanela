@@ -14,6 +14,10 @@ body {
     color: set-text-color($light-color);
     font-family: $font-stack;
     line-height: 1.5;
+
+    &.dark {
+        @include dark-theme(false);
+    }
 }
 
 header {
@@ -63,14 +67,15 @@ header {
         @extend .btn;
         background-color: $light-color;
         color: set-text-color($light-color);
-        border-radius: 8px;
+        // border-radius: 8px;
+        @include set-btn($light-color, 150, "full");
         
 
         // propriedades embutidas do sass, neste caso vamos definir a quantidade de hover que a função vai aplicar
         &:hover {
             background-color: darken($light-color, 30%);
             @include transform(rotate(10deg));
-            @include set-btn(#f00, 100px, #fff, center);
+            @include set-btn(#f00, 100px);
         }
     }
 
@@ -83,7 +88,7 @@ header {
         &:hover {
             background-color: lighten($dark-color, 30%);
             @include transform(scale(1.2));
-            @include set-btn(#fff, 150px,  #000, center);
+            @include set-btn(#fff, 150px);
         }
     }
 }
