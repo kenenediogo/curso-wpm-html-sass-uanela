@@ -4,6 +4,34 @@
   box-sizing: border-box;
 }
 
+nav {
+  padding: 2rem;
+  font-weight: bold;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+nav li a {
+  text-decoration: none;
+}
+nav li a.facebook {
+  color: #06f;
+}
+nav li a.instagram {
+  color: #f68dff;
+}
+nav li a.youtube {
+  color: #f00;
+}
+nav li a.whatsapp {
+  color: green;
+}
+nav li a.twitter {
+  color: rgb(0.5, 0.5, 0.5);
+}
+
 body {
   background-color: #f4f4f4;
   color: #1d1d1d;
@@ -38,6 +66,36 @@ header h1 {
   background-color: #4d94ff;
   color: #1d1d1d;
 }
+.section-1 h3 {
+  font-size: 1.5rem;
+}
+.section-2 h3 {
+  font-size: 3rem;
+}
+.section-3 h3 {
+  font-size: 4.5rem;
+}
+.section-4 h3 {
+  font-size: 6rem;
+}
+.section-5 h3 {
+  font-size: 7.5rem;
+}
+.section-6 h3 {
+  font-size: 9rem;
+}
+.section-7 h3 {
+  font-size: 10.5rem;
+}
+.section-8 h3 {
+  font-size: 12rem;
+}
+.section-9 h3 {
+  font-size: 13.5rem;
+}
+.section-10 h3 {
+  font-size: 15rem;
+}
 
 .btn, .btn-dark, .btn-light {
   display: inline-block;
@@ -54,6 +112,7 @@ header h1 {
   color: #1d1d1d;
   background-color: #f4f4f4;
   width: 150px;
+  color: 0;
   border-radius: 9999px;
 }
 .btn-light:hover {
@@ -61,6 +120,7 @@ header h1 {
   transform: rotate(10deg);
   background-color: #f00;
   width: 100pxpx;
+  color: #000;
   border-radius: unset;
 }
 .btn-dark {
@@ -73,6 +133,7 @@ header h1 {
   transform: scale(1.2);
   background-color: #fff;
   width: 150pxpx;
+  color: #000;
   border-radius: unset;
 }
 

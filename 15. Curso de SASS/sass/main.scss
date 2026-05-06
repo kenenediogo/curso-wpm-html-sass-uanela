@@ -9,6 +9,37 @@
     box-sizing: border-box;
 }
 
+nav {
+    padding: 2rem;
+    font-weight: bold;
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+    }
+
+    li a {
+        text-decoration: none;
+    
+
+        $colors: (
+            facebook: #06f,
+            instagram: #f68dff,
+            youtube: #f00,
+            whatsapp: green,
+            twitter: darken(grey, 50%),
+        );
+
+        @each $social, $valor in $colors {
+            &.#{$social} {
+                color: $valor;
+            }
+        }
+    }
+}
+
+
 body {
     background-color: $light-color;
     color: set-text-color($light-color);
@@ -47,6 +78,24 @@ header {
         background-color: $secondary-color;
         color: set-text-color($secondary-color);
     }
+
+    // @for $i from 1 through 10 {
+    //     &-#{$i} {
+    //         h3 {
+    //             font-size: 1.5 * $i + rem;
+    //         }
+    //     }
+    // }
+
+    $i: 1;
+    @while $i <= 10 {
+        &-#{$i} {
+            h3 {
+                font-size: 1.5 * $i + rem;
+            }
+        }
+        $i: $i + 1;
+    }
 }
 
 // HERANÇA
@@ -68,14 +117,14 @@ header {
         background-color: $light-color;
         color: set-text-color($light-color);
         // border-radius: 8px;
-        @include set-btn($light-color, 150, "full");
+        @include set-btn($light-color, 150, "full", 000);
         
 
         // propriedades embutidas do sass, neste caso vamos definir a quantidade de hover que a função vai aplicar
         &:hover {
             background-color: darken($light-color, 30%);
             @include transform(rotate(10deg));
-            @include set-btn(#f00, 100px);
+            @include set-btn(#f00, 100px, 0, #000);
         }
     }
 
@@ -88,7 +137,7 @@ header {
         &:hover {
             background-color: lighten($dark-color, 30%);
             @include transform(scale(1.2));
-            @include set-btn(#fff, 150px);
+            @include set-btn(#fff, 150px, 0, #000);
         }
     }
 }

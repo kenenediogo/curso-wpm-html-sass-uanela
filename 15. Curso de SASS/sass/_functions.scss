@@ -13,9 +13,10 @@
     transform: $property;
 }
 
-@mixin set-btn($bg-color, $width, $rounded: 0) {
+@mixin set-btn($bg-color, $width, $rounded: 0, $color) {
     background-color: $bg-color;
     width: $width + px;
+    color: $color;
 
     @if ($rounded == "full") {
         border-radius: 9999px;
